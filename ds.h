@@ -574,7 +574,6 @@ public:
             return -2;
         }
 
-        // BUG FIX: Prevent Double Registration
         if (st->coursesList.isAlreadyRegistered(cid)) {
             cout << "Error: You are already registered for this course.\n";
             return -5;
@@ -616,7 +615,6 @@ public:
             return;
         }
 
-        // BUG FIX: Ensure the student actually is taking the course before dropping
         if (!st->coursesList.isAlreadyRegistered(cid)) {
             cout << "You are not registered for " << cid << ".\n";
             return;
